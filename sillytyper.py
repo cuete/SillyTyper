@@ -7,6 +7,7 @@
 from time import sleep
 import sys
 import random
+import os
 
 class Line:
     def __init__(self, text, waitB4ms, charWait):
@@ -27,6 +28,7 @@ for line in batchfile:
     batch.append(Line(a,int(b),int(c)))
 
 batchfile.close()
+os.system('clear')
 print ('\n')
 
 for line in batch:
@@ -43,3 +45,5 @@ for line in batch:
     sleep(line.waitB4ms/1000)
 
 print ('\n\n')
+sleep(5)
+
