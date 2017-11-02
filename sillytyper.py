@@ -8,6 +8,7 @@ from time import sleep
 import sys
 import random
 import os
+from termcolor import colored
 
 class Line:
     def __init__(self, text, waitB4ms, charWait):
@@ -29,6 +30,7 @@ for line in batchfile:
 
 batchfile.close()
 os.system('clear')
+sys.stdout.write("\033[0;32m")
 print ('\n')
 
 for line in batch:
@@ -37,7 +39,7 @@ for line in batch:
         sys.stdout.write(c)
         sys.stdout.flush()
         if not line.charWait:
-            spacing = random.uniform(0, 0.5)
+            spacing = random.uniform(0, 0.3)
         else:
             spacing = float(line.charWait)/1000
         sleep(spacing)
