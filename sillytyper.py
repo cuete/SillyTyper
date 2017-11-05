@@ -22,7 +22,6 @@ else:
     filename = 'test'
 batchfile = open(filename,'r')
 batch = []
-#random.seed(a=None)
 
 for line in batchfile:
     a,b,c = line.split('\t')
@@ -32,6 +31,7 @@ batchfile.close()
 os.system('clear')
 sys.stdout.write("\033[0;32m")
 print ('\n')
+sleep(2)
 
 for line in batch:
     chars = list(line.text)
@@ -39,13 +39,13 @@ for line in batch:
         sys.stdout.write(c)
         sys.stdout.flush()
         if not line.charWait:
-            spacing = random.uniform(0, 0.3)
+            spacing = random.uniform(0, 0.2)
         else:
             spacing = float(line.charWait)/1000
         sleep(spacing)
     print ('')
-    sleep(line.waitB4ms/1000)
+    if line.waitB4ms != 0:
+        sleep(line.waitB4ms/1000)
 
-print ('\n\n')
 sleep(5)
 
